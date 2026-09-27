@@ -1,0 +1,5 @@
+- International payments company, 20+ markets, own processing
+- Product team of 8 engineers, direct impact on architecture
+- Tech: Go, PostgreSQL, Kafka, Kubernetes, gRPC
+- Relocation support to Cyprus or Poland, flexible hours
+- Hiring process: intro call → technical interview → system design → offer (2 weeks)
