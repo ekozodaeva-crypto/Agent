@@ -92,3 +92,10 @@ tests/        # unit-тесты (без обращения к API)
 ```bash
 pytest -q
 ```
+
+## Skill для Claude (без терминала)
+
+В `skills/candidate-match-outreach/SKILL.md` лежит тот же агент в виде Skill для Claude, а в `skills/candidate-match-outreach.zip` — готовый архив для загрузки.
+
+- **claude.ai:** Settings → Capabilities → Skills → Upload skill → выбрать `candidate-match-outreach.zip`. После этого в любом чате достаточно вставить вакансию и профиль кандидата и попросить «оцени кандидата».
+- **Claude Code:** скопировать папку `skills/candidate-match-outreach` в `~/.claude/skills/`.
