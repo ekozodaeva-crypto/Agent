@@ -7,13 +7,14 @@
 | Группа | `recruitment` |
 | Имя агента / папки | `candidate-match-outreach` |
 | Branch | `add-candidate-match-outreach` |
-| Type | `agent` (скилл-папка не нужна, шаги 14–21 пропускаются) |
+| Type | `agent + skill` |
+| Скилл в репозитории | `.claude/skills/candidate-match-outreach/SKILL.md` |
 
 ## Перед началом
 - [ ] Принять приглашение в GitLab из письма.
 - [ ] Включить VPN. Если GitLab показывает 403, значит, VPN выключен.
-- [ ] **Проверить агента самой** (правило каталога: только рабочие агенты). Скопируйте `agent.md` в `C:\Users\<вы>\.claude\agents\candidate-match-outreach.md`, перезапустите Claude Code и выполните `/agents`. Затем прогоните агента на одной настоящей вакансии. Если результат полезен, можно добавлять агента в каталог.
-- [ ] Если проверка прошла не сегодня, замените дату `2026-09-28` в карточке и в строке каталога на дату проверки.
+- [ ] **Проверить агента самой** (правило каталога: только рабочие агенты). Скопируйте `agent.md` в `C:\Users\<вы>\.claude\agents\candidate-match-outreach.md`, а папку `.claude/skills/candidate-match-outreach` целиком в `C:\Users\<вы>\.claude\skills\`. Перезапустите Claude Code и выполните `/agents`. Затем прогоните агента на одной настоящей вакансии. Если результат полезен, можно добавлять агента в каталог.
+- [ ] Если проверка прошла не сегодня, замените дату `2026-09-29` в карточке и в строке каталога на дату проверки.
 
 ## Шаги 1–3. Branch
 - [ ] **Code → Branches → New branch**
@@ -43,7 +44,15 @@
 - [ ] Commit message: `add candidate-match-outreach to catalogue`, Target branch: ваша ветка → **Commit changes**
 
 ## Шаги 14–21. Skill
-- [ ] Пропустить: у этого агента нет папки в `.claude\skills\`. Скилл, загруженный в claude.ai, к Claude Code не относится.
+- [ ] Проверьте, что вы в своей ветке: в селекторе должно быть `add-candidate-match-outreach`, а не `main`
+- [ ] На главной странице проекта нажмите **Edit → Web IDE**
+- [ ] Рядом откройте Проводник с распакованным архивом: папка `.claude\skills\candidate-match-outreach`
+- [ ] Перетащите папку `candidate-match-outreach` в дереве Web IDE **на строку `.claude/skills`**. Не на корень репозитория и не внутрь другого скилла.
+- [ ] Раскройте папку и проверьте содержимое: там только `SKILL.md`. Никаких выгрузок и данных кандидатов.
+- [ ] Откройте панель **Source Control** (иконка с веткой). Должен быть **1 файл** с пометкой A: `.claude/skills/candidate-match-outreach/SKILL.md`
+- [ ] Commit message: `add candidate-match-outreach skill`
+- [ ] На кнопке должно быть написано `Commit to 'add-candidate-match-outreach'`. Если там `main`, остановитесь. Если всё верно, нажмите кнопку.
+- [ ] Нажимайте «Назад» в браузере, пока не вернётесь на страницу проекта. Второй merge request для скилла не создавайте.
 
 ## Шаги 22–24. Merge request
 - [ ] **Code → Merge requests → New merge request** (или кнопка в зелёном баннере)
@@ -52,7 +61,7 @@
 - [ ] Assignees: **Assign to me**
 - [ ] Delete source branch: оставить галочку. Squash commits: без галочки.
 - [ ] **Create merge request**
-- [ ] Во вкладке **Changes** должно быть 3 файла: `agent.md`, `README.md` (карточка) и корневой `README.md`. Проверьте, что там нет реальных имён, токенов и ключей, а также оставшихся `<placeholder>`.
+- [ ] Во вкладке **Changes** должно быть 4 файла: `agent.md`, `README.md` (карточка), корневой `README.md` и `.claude/skills/candidate-match-outreach/SKILL.md`. Проверьте, что там нет реальных имён, токенов и ключей, а также оставшихся `<placeholder>`.
 - [ ] Merge делает владелец репозитория (Olena Sencha).
 
 ## Если что-то пошло не так
@@ -61,4 +70,5 @@
 | 403 Forbidden | Включить VPN |
 | «A branch already exists» | Вы были в `main`. Переключитесь на свою ветку и повторите |
 | Commit refused | В Target branch указан `main`. Поменяйте на свою ветку |
+| Агент запускается, но скилл не находится | Папка скилла лежит не в `.claude/skills/` |
 | Ссылка в таблице не открывается | Карточка лежит не в папке агента, или в имени папки есть пробелы |

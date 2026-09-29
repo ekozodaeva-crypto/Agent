@@ -2,9 +2,9 @@
 
 **Owner:** Elena Kozodaeva, e.kozodaeva@unlimit.com
 **Group:** recruitment
-**Type:** agent
+**Type:** agent + skill
 **Status:** working
-**Last verified:** 2026-09-28
+**Last verified:** 2026-09-29
 
 ## ✅ This agent only drafts — it never sends anything
 
@@ -26,13 +26,21 @@ Every candidate is scored with the same rubric: must-haves 50, experience and se
 
 ## Where the code lives
 
-- `recruitment/candidate-match-outreach/agent.md` — the agent itself. No skill folder is needed.
+This agent has two parts, and you need both:
+
+- `recruitment/candidate-match-outreach/agent.md` — the agent itself
+- `.claude/skills/candidate-match-outreach/` — the skill it runs on:
+  - `SKILL.md` — assessment rubric, outreach rules and output template
+
+`SKILL.md` is the canonical spec; the agent file summarises it. If the two ever disagree, `SKILL.md` wins.
+The skill has no scripts and no `data/` folder, so there is no `config.json` to fill in.
 
 ## How to install
 
-1. Copy `agent.md` into your own `C:\Users\<your-user>\.claude\agents\` folder and rename it to `candidate-match-outreach.md`.
-2. Restart Claude Code and run `/agents` to confirm it appears.
-3. No connector IDs to replace — the `tools:` line uses only built-in tools.
+1. Copy `recruitment/candidate-match-outreach/agent.md` into your own `C:\Users\<your-user>\.claude\agents\` folder and rename it to `candidate-match-outreach.md`.
+2. Copy the whole `.claude/skills/candidate-match-outreach/` folder into your own `C:\Users\<your-user>\.claude\skills\`.
+3. No connector IDs to replace — the `tools:` line uses only built-in tools (`Read`, `Glob`, `Grep`).
+4. Restart Claude Code and run `/agents` to confirm it appears.
 
 ## How to use
 
@@ -153,7 +161,7 @@ four steps, about two weeks. Happy to walk you through the scope whenever suits 
 ```
 
 ---
-`KPI | 2026-09-28 | Senior Backend Engineer (Go) | John Smith | 88 | Strong | Contact`
+`KPI | 2026-09-29 | Senior Backend Engineer (Go) | John Smith | 88 | Strong | Contact`
 ````
 
 ## Guardrails
