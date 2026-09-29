@@ -179,3 +179,9 @@ four steps, about two weeks. Happy to walk you through the scope whenever suits 
 - KPIs are not tracked automatically: paste the `KPI | ...` line into your tracker and mark contacted / replied / positive / HR screening there.
 - Candidate profiles are sent to Claude — use only for recruiting work, and do not paste in extra personal data (ID numbers, salary slips).
 - Always read the draft before sending; the agent can misread a CV.
+
+## Changelog
+
+| Date | Change | Author |
+|---|---|---|
+| 2026-09-29 | Added to the hr-ai-agents catalogue as agent + skill: assessment (fit score, fit level, must-have match, strengths, gaps, risks, missing information, Contact / Skip) and outreach draft (hook, selling point, tone of voice, message, follow-up) | e.kozodaeva |
