@@ -2,9 +2,9 @@
 
 **Owner:** Elena Kozodaeva, e.kozodaeva@unlimit.com
 **Group:** recruitment
-**Type:** agent + skill
+**Type:** agent
 **Status:** working
-**Last verified:** 2026-09-29
+**Last verified:** 2026-09-30
 
 ## ✅ This agent only drafts — it never sends anything
 
@@ -26,21 +26,13 @@ Every candidate is scored with the same rubric: must-haves 50, experience and se
 
 ## Where the code lives
 
-This agent has two parts, and you need both:
-
-- `recruitment/candidate-match-outreach/agent.md` — the agent itself
-- `.claude/skills/candidate-match-outreach/` — the skill it runs on:
-  - `SKILL.md` — assessment rubric, outreach rules and output template
-
-`SKILL.md` is the canonical spec; the agent file summarises it. If the two ever disagree, `SKILL.md` wins.
-The skill has no scripts and no `data/` folder, so there is no `config.json` to fill in.
+- `recruitment/candidate-match-outreach/agent.md` — the whole agent in one file: assessment rubric, outreach rules and output template. No skill folder is needed.
 
 ## How to install
 
 1. Copy `recruitment/candidate-match-outreach/agent.md` into your own `C:\Users\<your-user>\.claude\agents\` folder and rename it to `candidate-match-outreach.md`.
-2. Copy the whole `.claude/skills/candidate-match-outreach/` folder into your own `C:\Users\<your-user>\.claude\skills\`.
-3. No connector IDs to replace — the `tools:` line uses only built-in tools (`Read`, `Glob`, `Grep`).
-4. Restart Claude Code and run `/agents` to confirm it appears.
+2. No connector IDs to replace — the `tools:` line uses only built-in tools (`Read`, `Glob`, `Grep`).
+3. Restart Claude Code and run `/agents` to confirm it appears.
 
 ## How to use
 
@@ -184,4 +176,4 @@ four steps, about two weeks. Happy to walk you through the scope whenever suits 
 
 | Date | Change | Author |
 |---|---|---|
-| 2026-09-29 | Added to the hr-ai-agents catalogue as agent + skill: assessment (fit score, fit level, must-have match, strengths, gaps, risks, missing information, Contact / Skip) and outreach draft (hook, selling point, tone of voice, message, follow-up) | e.kozodaeva |
+| 2026-09-30 | Added to the hr-ai-agents catalogue as a single-file agent: assessment (fit score, fit level, must-have match, strengths, gaps, risks, missing information, Contact / Skip) and outreach draft (hook, selling point, tone of voice, message, follow-up) | e.kozodaeva |
